@@ -1,18 +1,13 @@
 {
   "name": "skymessage-server",
   "version": "1.0.0",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "dependencies": {
-    "better-sqlite3": "^8.0.0",
-    "bcryptjs": "^2.4.3",
     "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0",
-    "socket.io": "^4.7.1"
-  },
-  "engines": {
-    "node": "18.x"
+    "sqlite3": "^5.1.6",
+    "cors": "^2.8.5"
   }
 }
