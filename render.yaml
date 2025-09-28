@@ -8,15 +8,12 @@ services:
     startCommand: "npm start"
     envVars:
       - key: NODE_VERSION
-        value: 20
+        value: "20"
 
   - type: web
     name: skymessage-client
-    env: node
+    env: static
     plan: free
     rootDir: client
-    buildCommand: "npm install && npm run build"
-    startCommand: "npx serve -s build"
-    envVars:
-      - key: NODE_VERSION
-        value: 20
+    buildCommand: "echo Static site"
+    startCommand: "echo Static site"
