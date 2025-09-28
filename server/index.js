@@ -1,12 +1,29 @@
 const express = require("express");
 const sqlite3 = require("sqlite3").verbose();
 const cors = require("cors");
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const db = new sqlite3.Database("./db/skymessage.db");
+// Создаём папку db, если её нет
+const dbDir = path.join(__dirname, "db");
+if (!fs.existsSync(dbDir)) {
+  fs.mkdirSync(dbDir);
+  console.log("Папка db создана:", dbDir);
+}
+
+// Путь к базе
+const dbPath = path.join(dbDir, "skymessage.db");
+const db = new sqlite3.Database(dbPath, (err) => {
+  if (err) {
+    console.error("Ошибка открытия базы:", err);
+  } else {
+    console.log("База данных открыта:", dbPath);
+  }
+});
 
 // Таблица пользователей
 db.run(`CREATE TABLE IF NOT EXISTS users (
