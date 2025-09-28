@@ -1,0 +1,5 @@
+body { font-family: Arial, sans-serif; margin: 20px; }
+input { margin: 5px; padding: 5px; }
+button { margin: 5px; padding: 5px; cursor: pointer; }
+#chat { padding: 5px; }
+#search-results button { display: block; margin: 2px 0; }
